@@ -25,11 +25,17 @@ namespace EmployeeTemperatureLog.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("LastNumber")
+                    b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("LastUpdateDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("EmployeeNumber");
 
@@ -49,8 +55,8 @@ namespace EmployeeTemperatureLog.Migrations
                     b.Property<DateTime>("RecordDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Temperature")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<double>("Temperature")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 

@@ -11,7 +11,7 @@ namespace EmployeeTemperatureLog.Models
         [Key]
         public Guid EmployeeNumber { get; set; }
         public string FirstName { get; set; }
-        public string LastNumber { get; set; }
+        public string LastName { get; set; }
         public IEnumerable<TemperatureRecord> TemperatureRecords { get; set; }
 
         public DateTime DateCreated { get; set; }

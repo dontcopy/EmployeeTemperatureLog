@@ -1,4 +1,5 @@
 ﻿using EmployeeTemperatureLog.Models;
+using EmployeeTemperatureLog.Models.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,12 @@ namespace EmployeeTemperatureLog.Data.EmployeeRepository
     public interface IEmployeeRepository
     {
         Task<Employee> GetEmployee(Guid EmployeeNumber);
-        Task<IEnumerable<Employee>> GetAllEmployees();
+        Task<IEnumerable<Employee>> GetEmployeeByFirstName(string FirstName);
+        Task<IEnumerable<Employee>> GetEmployeeByLastName(string LastName);
 
-        void AddEmployee(Employee NewEmployee);
-        void UpdateEmployee(Employee UpdatedEmployee);
+        Task<PaginatedList<Employee>> GetAllEmployees(int PageIndex, int PageSize);
+
+        Task<Guid> AddEmployee(Employee NewEmployee);
+        Task<Guid> UpdateEmployee(Employee UpdatedEmployee);
     }
 }

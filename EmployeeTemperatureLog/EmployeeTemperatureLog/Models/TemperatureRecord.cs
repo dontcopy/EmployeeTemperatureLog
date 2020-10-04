@@ -10,7 +10,7 @@ namespace EmployeeTemperatureLog.Models
     public class TemperatureRecord
     {
         public int Id { get; set; }
-        public string Temperature { get; set; }
+        public double Temperature { get; set; }
         public Guid? EmployeeId { get; set; }
         public DateTime  RecordDate { get; set; }
         [ForeignKey("EmployeeId")]
